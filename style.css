@@ -1,0 +1,101 @@
+body {
+  background-color: #f2f4f9;
+}
+
+.main-container {
+  display: flex;
+}
+
+.search-img-container {
+  width: 75%;
+}
+
+input {
+  width: 99.5%;
+  height: 40px;
+  border: hidden;
+  border-radius: 5px;
+  display: block;
+  margin: auto;
+}
+
+.images {
+  width: 99.5%;
+  margin: 1% auto auto auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img-container {
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  margin: 0 1% 0 0;
+}
+
+.choose-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.img-container .description {
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: white;
+  margin-top: -10px;
+  border-radius: 5px;
+}
+
+.checkout-field {
+  width: 25%;
+  background-color: white;
+  margin: 0 0 0 5px;
+  border-radius: 5px;
+}
+
+.user {
+  margin: 10px 0 0 20px;
+}
+
+.hr1 {
+  width: 98%;
+  background-color: #f2f4f9;
+}
+
+.product-container {
+  display: flex;
+}
+
+.add-img {
+  height: 40px;
+  width: 40px;
+  border: 1px solid #f2f4f9;
+  margin: 0 0 0 20px;
+}
+
+.one-circle {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #43ad94;
+  color: white;
+  text-align: center;
+  font-size: smaller;
+  font-weight: bold;
+}
+
+.description-full {
+  padding: 10px;
+}
+
+.hr2 {
+  width: 90%;
+  background-color: #f2f4f9;
+}
+
+.trash-icon {
+  padding: 10px;
+}
