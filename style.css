@@ -21,9 +21,15 @@ input {
 
 .images {
   width: 99.5%;
-  margin: 1% auto auto auto;
+  margin: 1% auto 20px auto;
   display: flex;
   flex-wrap: wrap;
+  height: 80vh;
+}
+
+.hr3 {
+  width: 100%;
+  background-color: #f2f4f9;
 }
 
 .img-container {
@@ -31,6 +37,7 @@ input {
   width: 100px;
   background-color: black;
   margin: 0 1% 0 0;
+  cursor: pointer;
 }
 
 .choose-img {
@@ -65,8 +72,14 @@ input {
   background-color: #f2f4f9;
 }
 
+.main-product {
+  height: 67vh;
+  overflow-y: scroll;
+}
+
 .product-container {
   display: flex;
+  position: relative;
 }
 
 .add-img {
@@ -79,16 +92,23 @@ input {
 .one-circle {
   height: 15px;
   width: 15px;
-  border-radius: 50%;
+  border-radius: 50% 50% 50% 50% / 50% 50% 45% 45%;
   background-color: #43ad94;
   color: white;
   text-align: center;
   font-size: smaller;
   font-weight: bold;
+  position: absolute;
+  left: 55px;
+  bottom: 30px;
 }
 
 .description-full {
   padding: 10px;
+}
+
+.trash-icon {
+  cursor: pointer;
 }
 
 .hr2 {
@@ -98,4 +118,47 @@ input {
 
 .trash-icon {
   padding: 10px;
+}
+
+.count-container {
+  margin: 0 11px 0 11px;
+}
+
+.discount,
+.subtotal,
+.tax,
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.pay-container,
+.pay-button {
+  width: 100%;
+}
+
+.pay-button {
+  display: flex;
+  justify-content: space-between;
+  background-color: #7872b9;
+  color: white;
+  padding: 10px;
+  border: 1px solid #7872b9;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.options,
+.new-sale {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid white;
+  cursor: pointer;
 }
