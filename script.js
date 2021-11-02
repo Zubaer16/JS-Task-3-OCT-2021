@@ -1,58 +1,42 @@
-//Add to cart
-let addToCart = document.getElementsByClassName('img-container')
-for (let i = 0; i < addToCart.length; i++) {
-  let clickCart = addToCart[i]
-  clickCart.addEventListener('click', addToCartClicked)
+// Add to cart function
+
+let clickImageContainer = document.getElementsByClassName('img-container')
+
+for (i = 0; i < clickImageContainer.length; i++) {
+  let clickImageContainers = clickImageContainer[i]
+  clickImageContainers.addEventListener('click', cartAdded)
 }
 
-function addToCartClicked(event) {
-  clickCart = event.currentTarget
-  let title = clickCart.getElementsByClassName('h1')[0].innerText
-  let price = clickCart.getElementsByClassName('price')[0].innerText
-  let img = clickCart.getElementsByClassName('choose-img')[0].src
-  addItemToCart(title, price, img)
+function cartAdded(event) {
+  let targetImageContainer = event.currentTarget
+  let title = targetImageContainer.getElementsByClassName('h1')[0].innerText
+  let price = targetImageContainer.getElementsByClassName('price')[0].innerText
+  let img = targetImageContainer.getElementsByClassName('choose-img')[0].src
+  finallyAdded(title, price, img)
 }
 
-function addItemToCart(title, price, img) {
-  let addToCartContainer = document.createElement('div')
-  addToCartContainer.innerHTML = `<div class="product-container">
+function finallyAdded(title, price, img) {
+  let createDiv = document.createElement('div')
+  createDiv.innerHTML = `<div class="product-container">
   <img class="add-img" src="${img}" alt="laptop">
   <div class="one-circle">1</div>
   <div class="description-full">Laptop - ${title} <span class="price-1">${price}</span></div>
   <i class="fas fa-trash-alt trash-icon"></i>
 </div>
 <hr class="hr2">`
-  addToCartContainer.classList.add('group-of-product')
-  let addToCartBox = document.getElementsByClassName(
+  createDiv.classList.add('group-of-product')
+  let mainContainerProduct = document.getElementsByClassName(
     'main-container-product'
   )[0]
-
-  addToCartBox.appendChild(addToCartContainer)
-  removeCartItem()
+  mainContainerProduct.appendChild(createDiv)
   updateCartTotal()
+  removeCart()
 }
 
-//Remove cart
-
-let removeCart = document.getElementsByClassName('trash-icon')
-function removeCartItem() {
-  for (let i = 0; i < removeCart.length; i++) {
-    let trash = removeCart[i]
-    trash.addEventListener('click', function (event) {
-      trashClicked = event.target
-      trashClicked.parentElement.parentElement.remove()
-      updateCartTotal()
-    })
-  }
-}
-
-//Update cart total
+//Update the total when product added
 
 function updateCartTotal() {
-  let cartContainer = document.getElementsByClassName(
-    'main-container-product'
-  )[0]
-  let cartRows = cartContainer.getElementsByClassName('product-container')
+  let cartRows = document.getElementsByClassName('product-container')
   let total = 0
   for (let i = 0; i < cartRows.length; i++) {
     let cartRow = cartRows[i]
@@ -62,4 +46,18 @@ function updateCartTotal() {
   }
   document.getElementsByClassName('price-2')[0].innerText = total
   document.getElementsByClassName('price-3')[0].innerText = total
+}
+
+// Remove cart item
+
+function removeCart() {
+  let trashIcon = document.getElementsByClassName('trash-icon')
+  for (i = 0; i < trashIcon.length; i++) {
+    let trash = trashIcon[i]
+    trash.addEventListener('click', function (event) {
+      let trashClicked = event.target
+      trashClicked.parentElement.parentElement.remove()
+      updateCartTotal()
+    })
+  }
 }
